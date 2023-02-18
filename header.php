@@ -16,9 +16,11 @@
         <title>PWC Library Management System</title>
         <link rel="canonical" href="">
         <!-- Bootstrap core CSS -->
-        <link href="<?php echo base_url(); ?>asset/css/simple-datatables-style.css" rel="stylesheet" />
-        <link href="<?php echo base_url(); ?>asset/css/styles.css" rel="stylesheet" />
-        <script src="<?php echo base_url(); ?>asset/js/font-awesome-5-all.min.js" crossorigin="anonymous"></script>
+        <style><?php include 'asset/css/styles.css'; ?></style>
+        <style><?php include 'asset/css/simple-datatables-style.css'; ?></style>
+        <style><?php include 'asset/css/select2.min.css'; ?></style>
+        <style><?php include 'asset/css/vanillaSelectBox.css'; ?></style>
+
         <!-- Favicons -->
         <link rel="apple-touch-icon" href="" sizes="180x180">
         <link rel="icon" href="" sizes="32x32" type="image/png">
@@ -53,7 +55,7 @@
 
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.php">Library System</a>
+            <a class="navbar-brand ps-3" href="index.php">Prince of Wales' College - Library Management System</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">

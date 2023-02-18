@@ -11,8 +11,12 @@ if(is_user_login())
 include 'header.php';
 
 
-
 ?>
+
+		<style><?php include 'asset/css/styles.css'; ?></style>
+        <style><?php include 'asset/css/simple-datatables-style.css'; ?></style>
+        <style><?php include 'asset/css/select2.min.css'; ?></style>
+        <style><?php include 'asset/css/vanillaSelectBox.css'; ?></style>
 
 <div class="p-5 mb-4 bg-light rounded-3">
 
