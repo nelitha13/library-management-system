@@ -162,7 +162,7 @@ include '../header.php';
 ?>
 
 <div class="container-fluid py-4" style="min-height: 700px;">
-	<h1>Location Rack Management</h1>
+	<h1>Location Racks Management</h1>
 	<?php 
 
 	if(isset($_GET["action"]))
@@ -173,8 +173,8 @@ include '../header.php';
 	
 	<ol class="breadcrumb mt-4 mb-4 bg-light p-2 border">
 		<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-		<li class="breadcrumb-item"><a href="category.php">Location Rack Management</a></li>
-		<li class="breadcrumb-item active">Add Location Rack</li>
+		<li class="breadcrumb-item"><a href="category.php">Location Racks Management</a></li>
+		<li class="breadcrumb-item active">Create New Location Rack</li>
 	</ol>
 
 	<div class="row">
@@ -191,7 +191,7 @@ include '../header.php';
 			?>
 			<div class="card mb-4">
 				<div class="card-header">
-					<i class="fas fa-user-plus"></i> Add New Location Rack
+					<i class="fas fa-user-plus"></i> Create New Location Rack
                 </div>
                 <div class="card-body">
                 	<form method="post">
@@ -229,7 +229,7 @@ include '../header.php';
 
 	<ol class="breadcrumb mt-4 mb-4 bg-light p-2 border">
 		<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="location_rack.php">Location Rack Management</a></li>
+        <li class="breadcrumb-item"><a href="location_rack.php">Location Racks Management</a></li>
         <li class="breadcrumb-item active">Edit Location Rack</li>
     </ol>
     <div class="row">
@@ -266,7 +266,7 @@ include '../header.php';
 	?>
 	<ol class="breadcrumb mt-4 mb-4 bg-light p-2 border">
 		<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-		<li class="breadcrumb-item active">Location Rack Management</li>
+		<li class="breadcrumb-item active">Location Racks Management</li>
 	</ol>
 		<?php 
 
@@ -298,10 +298,10 @@ include '../header.php';
 		<div class="card-header">
 			<div class="row">
 				<div class="col col-md-6">
-					<i class="fas fa-table me-1"></i> Location Rack Management
+					<i class="fas fa-table me-1"></i> Location Racks Management
 				</div>
 				<div class="col col-md-6" align="right">
-					<a href="location_rack.php?action=add" class="btn btn-success btn-sm">Add</a>
+					<a href="location_rack.php?action=add" class="btn btn-success btn-sm">Create New Location Rack</a>
 				</div>
 			</div>
 		</div>
@@ -346,8 +346,8 @@ include '../header.php';
 							<td>'.$row["location_rack_name"].'</td>
 							<td>'.$location_rack_status.'</td>
 							<td>'.$row["location_rack_created_on"].'</td>
-							<td>'.$row["location_rack_updated_on"].'</td>
-							<td>
+							<td width ="20%">'.$row["location_rack_updated_on"].'</td>
+							<td width ="10%">
 								<a href="location_rack.php?action=edit&code='.convert_data($row["location_rack_id"]).'" class="btn btn-sm btn-primary">Edit</a>
 								<button type="button" name="delete_button" class="btn btn-danger btn-sm" onclick="delete_data(`'.$row["location_rack_id"].'`, `'.$row["location_rack_status"].'`)">Delete</button>
 							</td>

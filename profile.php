@@ -71,56 +71,13 @@ if(isset($_POST['save_button']))
 		$formdata['user_contact_no'] = $_POST['user_contact_no'];
 	}
 
-	$formdata['user_profile'] = $_POST['hidden_user_profile'];
-
-	if(!empty($_FILES['user_profile']['name']))
-	{
-		$img_name = $_FILES['user_profile']['name'];
-		$img_type = $_FILES['user_profile']['type'];
-		$tmp_name = $_FILES['user_profile']['tmp_name'];
-		$fileinfo = @getimagesize($tmp_name);
-		$width = $fileinfo[0];
-		$height = $fileinfo[1];
-		$image_size = $_FILES['user_profile']['size'];
-		$img_explode = explode(".", $img_name);
-		$img_ext = strtolower(end($img_explode));
-		$extensions = ["jpeg", "png", "jpg"];
-		if(in_array($img_ext, $extensions))
-		{
-			if($image_size <= 2000000)
-			{
-				if($width == 225 && $height == 225)
-				{
-					$new_img_name = time() . '-' . rand() . '.'  . $img_ext;
-
-					if(move_uploaded_file($tmp_name, "upload/" . $new_img_name))
-					{
-						$formdata['user_profile'] = $new_img_name;
-					}
-				}
-				else
-				{
-					$message .= '<li>Image dimension should be within 225 X 225</li>';
-				}
-			}
-			else
-			{
-				$message .= '<li>Image size exceeds 2MB</li>';
-			}
-		}
-		else
-		{
-			$message .= '<li>Invalid Image File</li>';
-		}
-	}
-
+	
 	if($message == '')
 	{
 		$data = array(
 			':user_name'			=>	$formdata['user_name'],
 			':user_address'			=>	$formdata['user_address'],
 			':user_contact_no'		=>	$formdata['user_contact_no'],
-			':user_profile'			=>	$formdata['user_profile'],
 			':user_email_address'	=>	$formdata['user_email_address'],
 			':user_password'		=>	$formdata['user_password'],
 			':user_updated_on'		=>	get_date_time($connect),
@@ -132,7 +89,6 @@ if(isset($_POST['save_button']))
             SET user_name = :user_name, 
             user_address = :user_address, 
             user_contact_no = :user_contact_no, 
-            user_profile = :user_profile, 
             user_email_address = :user_email_address, 
             user_password = :user_password, 
             user_updated_on = :user_updated_on 
@@ -200,15 +156,7 @@ include 'header.php';
 						<label class="form-label">User Address</label>
 						<textarea name="user_address" id="user_address" class="form-control"><?php echo $row['user_address']; ?></textarea>
 					</div>
-					<div class="mb-3">
-						<label class="form-label">User Photo</label><br />
-						<input type="file" name="user_profile" id="user_profile" />
-						<br />
-						<span class="text-muted">Only .jpg & .png image allowed. Image size must be 225 x 225</span>
-						<br />
-						<input type="hidden" name="hidden_user_profile" value="<?php echo $row['user_profile']; ?>" />
-						<img src="upload/<?php echo $row['user_profile']; ?>" width="100" class="img-thumbnail" />
-					</div>
+				
 					<div class="text-center mt-4 mb-2">
 						<input type="submit" name="save_button" class="btn btn-primary" value="Save" />
 					</div>

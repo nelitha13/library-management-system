@@ -22,7 +22,7 @@ include 'header.php';
 
 	<div class="container-fluid py-5">
 
-		<h1 class="display-5 fw-bold">Library Management System</h1>
+		<h1 class="display-5 fw-bold">Library Management System</h1><h2>Prince of Wales' College</h2>
 
 		<p class="fs-4">This is simple Library Management System which use for maintain the record of the library. This Library Managment System has been made by using PHP script, MySQL Database, Vanilla JavaScript and Bootstrap 5 framework. This is PHP Project on Online Library Management System.</p>
 

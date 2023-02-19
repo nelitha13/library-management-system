@@ -64,7 +64,7 @@
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                         <li><a class="dropdown-item" href="setting.php">Setting</a></li>
@@ -79,15 +79,20 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="category.php">Category</a>
-                            <a class="nav-link" href="author.php">Author</a>
-                            <a class="nav-link" href="location_rack.php">Location Rack</a>
-                            <a class="nav-link" href="book.php">Book</a>
-                            <a class="nav-link" href="user.php">User</a>
-                            <a class="nav-link" href="issue_book.php">Issue Book</a>
+                            <a class="nav-link" href="index.php">Dashboard</a>
+                            <a class="nav-link" href="issue_book.php">Issued Books</a>
+                            <a class="nav-link" href="book.php">Books</a>
+                            <a class="nav-link" href="category.php">Categories</a>
+                            <a class="nav-link" href="author.php">Authors</a>
+                            <a class="nav-link" href="location_rack.php">Location Racks</a>
+                            <a class="nav-link" href="user.php">Users</a>
                             <a class="nav-link" href="logout.php">Logout</a>
 
                         </div>
+                        <br><br><br>
+                        <center>
+                        <iframe src="https://free.timeanddate.com/clock/i8q7f2si/n1925/tllk/fs16/fcfff/tct/pct/tt0/th2/tb4" frameborder="0" width="215" height="38" allowtransparency="true"></iframe>
+                        </center>
                     </div>
                     <div class="sb-sidenav-footer">
                        

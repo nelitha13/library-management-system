@@ -452,30 +452,22 @@ include '../header.php';
         <div class="card-body">
         	<table id="datatablesSimple">
         		<thead> 
-        			<tr> 
+        			<tr>
+						<th>ISBN No.</th>
         				<th>Book Name</th>
-        				<th>ISBN No.</th>
-        				<th>Category</th>
         				<th>Author</th>
         				<th>Location Rack</th>
-        				<th>No. of Copy</th>
-        				<th>Status</th>
-        				<th>Created On</th>
-        				<th>Updated On</th>
+        				<th>Qty</th>
         				<th>Action</th>
         			</tr>
         		</thead>
         		<tfoot>
         			<tr>
+						<th>ISBN No.</th>
         				<th>Book Name</th>
-        				<th>ISBN No.</th>
-        				<th>Category</th>
         				<th>Author</th>
         				<th>Location Rack</th>
-        				<th>No. of Copy</th>
-        				<th>Status</th>
-        				<th>Created On</th>
-        				<th>Updated On</th>
+        				<th>Qty</th>
         				<th>Action</th>
         			</tr>
         		</tfoot>
@@ -497,15 +489,11 @@ include '../header.php';
         				}
         				echo '
         				<tr>
+							<td>'.$row["book_isbn_number"].'</td>
         					<td>'.$row["book_name"].'</td>
-        					<td>'.$row["book_isbn_number"].'</td>
-        					<td>'.$row["book_category"].'</td>
-        					<td>'.$row["book_author"].'</td>
-        					<td>'.$row["book_location_rack"].'</td>
-        					<td>'.$row["book_no_of_copy"].'</td>
-        					<td>'.$book_status.'</td>
-        					<td>'.$row["book_added_on"].'</td>
-        					<td>'.$row["book_updated_on"].'</td>
+        					<td width ="10%">'.$row["book_author"].'</td>
+        					<td width ="5%">'.$row["book_location_rack"].'</td>
+        					<td width ="5%">'.$row["book_no_of_copy"].'</td>
         					<td>
         						<a href="book.php?action=edit&code='.convert_data($row["book_id"]).'" class="btn btn-sm btn-primary">Edit</a>
         						<button type="button" name="delete_button" class="btn btn-danger btn-sm" onclick="delete_data(`'.$row["book_id"].'`, `'.$row["book_status"].'`)">Delete</button>

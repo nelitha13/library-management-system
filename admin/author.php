@@ -162,7 +162,7 @@ include '../header.php';
 ?>
 
 <div class="container-fluid py-4" style="min-height: 700px;">
-	<h1>Author Management</h1>
+	<h1>Authors</h1>
 	<?php 
 
 	if(isset($_GET["action"]))
@@ -173,7 +173,7 @@ include '../header.php';
 
 	<ol class="breadcrumb mt-4 mb-4 bg-light p-2 border">
 		<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="author.php">Author Management</a></li>
+        <li class="breadcrumb-item"><a href="author.php">Authors</a></li>
         <li class="breadcrumb-item active">Add Author</li>
     </ol>
 
@@ -227,7 +227,7 @@ include '../header.php';
 
 	<ol class="breadcrumb mt-4 mb-4 bg-light p-2 border">
 		<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="author.php">Author Management</a></li>
+        <li class="breadcrumb-item"><a href="author.php">Authors</a></li>
         <li class="breadcrumb-item active">Edit Author</li>
     </ol>
 
@@ -264,7 +264,7 @@ include '../header.php';
 	?>
 	<ol class="breadcrumb mt-4 mb-4 bg-light p-2 border">
 		<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-		<li class="breadcrumb-item active">Author Management</li>
+		<li class="breadcrumb-item active">Authors</li>
 	</ol>
 	<?php 
 
@@ -305,19 +305,16 @@ include '../header.php';
 			<table id="datatablesSimple">
 				<thead>
 					<tr>
+						<th>ID</th>
 						<th>Author Name</th>
-						<th>Status</th>
-						<th>Created On</th>
-						<th>Updated On</th>
+						<th>Added On</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tfoot>
 					<tr>
-						<th>Author Name</th>
-						<th>Status</th>
-						<th>Created On</th>
-						<th>Updated On</th>
+						<th>ID</th>
+						<th>Added On</th>
 						<th>Action</th>
 					</tr>
 				</tfoot>
@@ -339,10 +336,9 @@ include '../header.php';
 						
 						echo '
 						<tr>
-							<td>'.$row["author_name"].'</td>
-							<td>'.$author_status.'</td>
-							<td>'.$row["author_created_on"].'</td>
-							<td>'.$row["author_updated_on"].'</td>
+							<td width ="10%">'.$row["author_id"].'</td>
+							<td width ="15%">'.$row["author_name"].'</td>
+							<td width ="20%">'.$row["author_created_on"].'</td>
 							<td>
 								<a href="author.php?action=edit&code='.convert_data($row["author_id"]).'" class="btn btn-sm btn-primary">Edit</a>
 								<button type="button" name="delete_button" class="btn btn-danger btn-sm" onclick="delete_data(`'.$row["author_id"].'`, `'.$row["author_status"].'`)">Delete</button>

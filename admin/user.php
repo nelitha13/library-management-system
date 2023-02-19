@@ -79,6 +79,9 @@ include '../header.php';
     			<div class="col col-md-6">
     				<i class="fas fa-table me-1"></i> User Management
     			</div>
+				<div class="col col-md-6" align="right">
+					<a href="../user_registration.php" class="btn btn-success btn-sm">Register New User</a>
+				</div>
     			<div class="col col-md-6" align="right">
     			</div>
     		</div>
@@ -87,33 +90,23 @@ include '../header.php';
     		<table id="datatablesSimple">
     			<thead>
     				<tr>
-    					<th>Image</th>
-                        <th>User Unique ID</th>
+                        <th>User ID</th>
+						<th>Index No.</th>
                         <th>User Name</th>
                         <th>Email Address</th>
-                        <th>Password</th>
                         <th>Contact No.</th>
-                        <th>Address</th>
-                        <th>Email Verified</th>
-                        <th>Status</th>
                         <th>Created On</th>
-                        <th>Updated On</th>
                         <th>Action</th>
     				</tr>
     			</thead>
     			<tfoot>
     				<tr>
-    					<th>Image</th>
-                        <th>User Unique ID</th>
+                        <th>User ID</th>
+						<th>Index No.</th>
                         <th>User Name</th>
                         <th>Email Address</th>
-                        <th>Password</th>
                         <th>Contact No.</th>
-                        <th>Address</th>
-                        <th>Email Verified</th>
-                        <th>Status</th>
                         <th>Created On</th>
-                        <th>Updated On</th>
                         <th>Action</th>
     				</tr>
     			</tfoot>
@@ -134,17 +127,12 @@ include '../header.php';
     					}
     					echo '
     					<tr>
-    						<td><img src="../upload/'.$row["user_profile"].'" class="img-thumbnail" width="75" /></td>
     						<td>'.$row["user_unique_id"].'</td>
-    						<td>'.$row["user_name"].'</td>
+							<td width ="10%">'.$row["user_password"].'</td>
+    						<td width ="10%">'.$row["user_name"].'</td>
     						<td>'.$row["user_email_address"].'</td>
-    						<td>'.$row["user_password"].'</td>
     						<td>'.$row["user_contact_no"].'</td>
-    						<td>'.$row["user_address"].'</td>
-    						<td>'.$row["user_verification_status"].'</td>
-    						<td>'.$user_status.'</td>
     						<td>'.$row["user_created_on"].'</td>
-    						<td>'.$row["user_updated_on"].'</td>
     						<td><button type="button" name="delete_button" class="btn btn-danger btn-sm" onclick="delete_data(`'.$row["user_id"].'`, `'.$row["user_status"].'`)">Delete</td>
     					</tr>
     					';

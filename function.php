@@ -1318,6 +1318,25 @@ function Count_total_book_number($connect)
 	return $total;
 }
 
+function Count_total_users($connect)
+{
+	$total = 0;
+
+	$query = "
+	SELECT COUNT(user_id) AS Total FROM lms_user 
+	WHERE user_status = 'Enable'
+	";
+
+	$result = $connect->query($query);
+
+	foreach($result as $row)
+	{
+		$total = $row["Total"];
+	}
+
+	return $total;
+}
+
 function Count_total_author_number($connect)
 {
 	$total = 0;

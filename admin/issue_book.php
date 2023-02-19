@@ -196,7 +196,7 @@ include '../header.php';
 
 ?>
 <div class="container-fluid py-4" style="min-height: 700px;">
-	<h1>Issue Book Management</h1>
+	<h1>Issued Books</h1>
     <?php 
 
     if(isset($_GET["action"]))
@@ -206,7 +206,7 @@ include '../header.php';
     ?>
     <ol class="breadcrumb mt-4 mb-4 bg-light p-2 border">
         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="issue_book.php">Issue Book Management</a></li>
+        <li class="breadcrumb-item"><a href="issue_book.php">Issued Books</a></li>
         <li class="breadcrumb-item active">Issue New Book</li>
     </ol>
     <div class="row">
@@ -375,7 +375,7 @@ include '../header.php';
                     echo '
                     <ol class="breadcrumb mt-4 mb-4 bg-light p-2 border">
                         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="issue_book.php">Issue Book Management</a></li>
+                        <li class="breadcrumb-item"><a href="issue_book.php">Issued Books Management</a></li>
                         <li class="breadcrumb-item active">View Issue Book Details</li>
                     </ol>
                     ';
@@ -431,10 +431,6 @@ include '../header.php';
                             <tr>
                                 <th width="30%">User Email Address</th>
                                 <td width="70%">'.$user_data["user_email_address"].'</td>
-                            </tr>
-                            <tr>
-                                <th width="30%">User Image</th>
-                                <td width="70%"><img src="'.base_url().'upload/' . $user_data["user_profile"].'" class="img-thumbnail" width="100" /></td>
                             </tr>
                         </table>
                         <br />
@@ -512,7 +508,7 @@ include '../header.php';
     ?>
 	<ol class="breadcrumb mt-4 mb-4 bg-light p-2 border">
 		<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-        <li class="breadcrumb-item active">Issue Book Management</li>
+        <li class="breadcrumb-item active">Issued Books</li>
     </ol>
 
     <?php 
@@ -536,10 +532,10 @@ include '../header.php';
     	<div class="card-header">
     		<div class="row">
     			<div class="col col-md-6">
-    				<i class="fas fa-table me-1"></i> Issue Book Management
+    				<i class="fas fa-table me-1"></i> Issued Books
                 </div>
                 <div class="col col-md-6" align="right">
-                    <a href="issue_book.php?action=add" class="btn btn-success btn-sm">Add</a>
+                    <a href="issue_book.php?action=add" class="btn btn-success btn-sm">Issue Book</a>
                 </div>
             </div>
         </div>
@@ -547,22 +543,22 @@ include '../header.php';
         	<table id="datatablesSimple">
         		<thead>
         			<tr>
-        				<th>Book ISBN Number</th>
-                        <th>User Unique ID</th>
+        				<th>Book ISBN</th>
+                        <th>User ID</th>
                         <th>Issue Date</th>
+                        <th>Expected Date</th>
                         <th>Return Date</th>
-                        <th>Late Return Fines</th>
                         <th>Status</th>
                         <th>Action</th>
         			</tr>
         		</thead>
         		<tfoot>
         			<tr>
-        				<th>Book ISBN Number</th>
-                        <th>User Unique ID</th>
+        				<th>Book ISBN</th>
+                        <th>User ID</th>
                         <th>Issue Date</th>
+                        <th>Expected Date</th>
                         <th>Return Date</th>
-                        <th>Late Return Fines</th>
                         <th>Status</th>
                         <th>Action</th>
         			</tr>
@@ -626,12 +622,12 @@ include '../header.php';
 
         				echo '
         				<tr>
-        					<td>'.$row["book_id"].'</td>
-        					<td>'.$row["user_id"].'</td>
-        					<td>'.$row["issue_date_time"].'</td>
-        					<td>'.$row["return_date_time"].'</td>
-        					<td>'.$currency_symbol.$book_fines.'</td>
-        					<td>'.$status.'</td>
+        					<td width="15%">'.$row["book_id"].'</td>
+        					<td width="10%">'.$row["user_id"].'</td>
+        					<td width="20%">'.$row["issue_date_time"].'</td>
+                            <td width="20%">'.$row["expected_return_date"].'</td>
+        					<td width="20%">'.$row["return_date_time"].'</td>
+        					<td width="10%">'.$status.'</td>
         					<td>
                                 <a href="issue_book.php?action=view&code='.convert_data($row["issue_book_id"]).'" class="btn btn-info btn-sm">View</a>
                             </td>
